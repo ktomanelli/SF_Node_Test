@@ -25,7 +25,9 @@ In order to seed data into the database, run the command `npm run seed`
 
 ## How it works
 
-The app can be started by running the command `npm start`. When the app is started, a connection to the mongo database is initiated, and express will start listening for connections on port 3000.
+The app can be started by installing necessary dependencies with `npm install`, then running `npm start`.
+
+When the app is started, a connection to the mongo database is initiated, and express will start listening for connections on port 3000.
 
 The available routes are:
 
