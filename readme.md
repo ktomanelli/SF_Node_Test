@@ -23,7 +23,9 @@ const CreditorSchema = new Schema({
 
 In order to seed data into the database, run the command `npm run seed`
 
-## How it works
+## How It Works
+
+_A MongoDB connection string is required to successfully run the application. Please obtain a connection string from your local instance of MongoDB or a MongoDB Atlas cluster. Then create an env variable called MONGO_URI to store your connection string._
 
 The app can be started by installing necessary dependencies with `npm install`, then running `npm start`.
 
@@ -63,3 +65,11 @@ Bonus Credit: Make it as a lambda function in AWS
 ## Testing
 
 All test files can be found in `test/`. All tests were built using Mocha and Chai testing libraries. To run the tests, use the command `npm run test`.
+
+Before each test, the collection of creditors is dropped. The test creates all necessary data, makes the particular request to the express server and then confirms the response from the server is correct.
+
+## Challenges
+
+I'd say the most challenging part of building this app for me learning the ins and outs of Mongoose. In my past projects I've worked with MongoDB's native driver and have gotten relatively comfortable with it. However I wanted to use this challenge as a way to get more familiar with the Mongo ODM and so I decided to go with Mongoose instead. And I really kind of wish I had made the decision sooner to be honest! Mongoose is phenomenal, I can definitely see why its so popular and I'll certainly be using it in my personal projects in the future.
+
+Another challenge was working with Chai. Chai is a testing library I decided to use to build the unit tests for the API. It's another library that I had never used before this but after working with it I can absolutely see it's potential. It was a great tool and really helped building out the unit tests!
