@@ -68,8 +68,11 @@ app.patch('/api/creditor/:id', (req, res) => {
   const { id } = req.params;
   // find document and update with given body
   Creditor.findByIdAndUpdate(id, { ...req.body })
-    .then(() => res.sendStatus(200))
-    .catch(e => res.status(400).send({ message: e }));
+    .then(() => Creditor.find({ _id: id }))
+    .then(creditor => res.status(200).send(creditor))
+    .catch(e => {
+      res.status(400).send({ message: e });
+    });
 });
 
 // handles 404s
